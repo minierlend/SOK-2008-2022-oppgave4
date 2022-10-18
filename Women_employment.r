@@ -5,9 +5,9 @@ library(ggplot2)
 library(reshape2)
 library(tidyverse)
 library(gridExtra)
-#C:/Users/Erlend/OneDrive/Skrivebord/women/women.csv
 
-women <- read.csv2("https://uit-sok-2008-h22.github.io/Assets/women.csv")
+
+women <- read.csv2("C:/Users/Erlend/OneDrive/Skrivebord/women/women.csv")
 
 women$tot_full_rate<-as.numeric(women$tot_full_rate)
 women$fem_emp_rate_0_2<-as.numeric(women$fem_emp_rate_0_2)
@@ -19,16 +19,16 @@ women%>%
   ggplot(aes(x=tot_full_rate,y=fem_emp_rate_0_2))+
   geom_point()+
   ylim(0, 100)+
-  labs(x ="Uker med 100% støtte", y = "Yrkesdeltakelse blant mødre hvis yngste barn er 0-2 år")+
+  labs(x ="Uker med 100% stÃ¸tte", y = "Yrkesdeltakelse blant mÃ¸dre hvis yngste barn er 0-2 Ã¥r")+
   geom_smooth(method=lm, se=FALSE) -> kids_0_2
 
 women%>%
   ggplot(aes(x=tot_full_rate,y=fem_emp_rate_6_14))+
   geom_point()+
   ylim(0, 100)+
-  labs(x ="Uker med 100% støtte", y = "Yrkesdeltakelse blant mødre hvis yngste barn er 6-14 årr")+
+  labs(x ="Uker med 100% stÃ¸tte", y = "Yrkesdeltakelse blant mÃ¸dre hvis yngste barn er 6-14 Ã¥rr")+
   geom_smooth(method=lm, se=FALSE) -> kids_6_14
 
 library(gridExtra)
 library(grid)
-grid.arrange(kids_0_2,kids_6_14, nrow = 1,  top = textGrob("Sammenhengen mellom foreldrepermisjons lengde og mødres yrkesdelakelse etter yngste barns alder",gp=gpar(fontsize=14,font=3)))
+grid.arrange(kids_0_2,kids_6_14, nrow = 1,  top = textGrob("Sammenhengen mellom foreldrepermisjons lengde og mÃ¸dres yrkesdelakelse etter yngste barns alder",gp=gpar(fontsize=14,font=3)))
