@@ -1,10 +1,10 @@
 
+library(gridExtra)
 library(grid)
 library(readr)
 library(ggplot2)
-library(reshape2)
 library(tidyverse)
-library(gridExtra)
+library(reshape2)
 
 
 women <- read.csv2("C:/Users/Erlend/OneDrive/Skrivebord/women/women.csv")
